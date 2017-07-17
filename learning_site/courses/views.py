@@ -6,4 +6,5 @@ from django.http import HttpResponse
 def courses_list(request):
 	courses = Course.objects.all()
 	output = ', '.join([str(course) for course in courses])
+	
 	return HttpResponse(output)
