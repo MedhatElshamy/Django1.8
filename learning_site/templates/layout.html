@@ -1,12 +1,16 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>{% block title %}{% endblock %}</title>
+		<link rel='stylesheet' href="{% static 'css/layout.css' %}"
 	</head>
 	<body>
+	<div class='site-container'>
 	{% block content %}
 	<h2>Hello From Layout!</h2>
 	{% endblock content %}
 	<p>This is outside of block</p>
+	</div>
 	</body>
 </html>
