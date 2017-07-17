@@ -9,6 +9,6 @@ from django.http import HttpResponse
 	
 # 	return HttpResponse(output)
 
-def courses_list(request):
+def course_list(request):
 	courses = Course.objects.all()
 	return render(request, 'courses/course_list.html', {'courses': courses})
