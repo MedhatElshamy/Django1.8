@@ -1,16 +1,25 @@
 {% load static from staticfiles %}
+{% load course_extras %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>{% block title %}{% endblock %}</title>
-		<link rel='stylesheet' href="{% static 'css/layout.css' %}"
+		<link rel='stylesheet' href="{% static 'css/layout.css' %}">
+		{% block static %} {% endblock %}
 	</head>
 	<body>
+	
 	<div class='site-container'>
+		<div>{% nav_courses_list %}
+		<nav>
+			<a href="{% url 'views.hello_world' %}">Home</a>
+			<a href="{% url 'courses:list' %}">Courses</a>
+		</nav>
+	<p>Don't Miss Our Latest Course, {% newest_course %}!</p>
 	{% block content %}
 	<h2>Hello From Layout!</h2>
 	{% endblock content %}
-	<p>This is outside of block</p>
+	
 	</div>
 	</body>
 </html>
