@@ -21,6 +21,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.hello_world),
+    url(r'^suggest$', views.suggestion_view, name='suggestion'),
     url(r'^courses/', include('courses.urls', namespace='courses')),
 ]
 
